@@ -1,5 +1,7 @@
 # Wypozyczalnia-samochodow
+
 Główne założenia: 
+
 1.Stworzenie programu, który będzie dokonywał operacji danych w zewnętrznej bazie danych MySQL.
 
 2.Implementacja kodu który pozwoli na dodawanie nowych samochodów,klientów i wypożyczeń.
