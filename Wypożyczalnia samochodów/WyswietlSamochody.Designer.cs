@@ -1,4 +1,4 @@
-namespace Wypozyczalnia_Samochodow
+namespace Wypozyczalnia_Samochodo
 {
     partial class WyswietlSamochody
     {
