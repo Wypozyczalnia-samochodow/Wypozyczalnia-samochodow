@@ -30,16 +30,17 @@ namespace Wypozyczalnia_Samochodow
         {
             this.label1 = new System.Windows.Forms.Label();
             this.WyswietlDG1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marka = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rocznik = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Kolor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marka = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kolor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rocznik = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CenaZaGodzine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.WyswietlDG1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -67,38 +68,14 @@ namespace Wypozyczalnia_Samochodow
             this.id,
             this.Marka,
             this.Model,
+            this.Kolor,
             this.Rocznik,
-            this.Kolor});
-            this.WyswietlDG1.Location = new System.Drawing.Point(147, 305);
+            this.CenaZaGodzine});
+            this.WyswietlDG1.Location = new System.Drawing.Point(117, 311);
             this.WyswietlDG1.Name = "WyswietlDG1";
-            this.WyswietlDG1.Size = new System.Drawing.Size(544, 155);
+            this.WyswietlDG1.Size = new System.Drawing.Size(644, 155);
             this.WyswietlDG1.TabIndex = 1;
             this.WyswietlDG1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WyswietlDG1_CellContentClick);
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            // 
-            // Marka
-            // 
-            this.Marka.HeaderText = "Marka";
-            this.Marka.Name = "Marka";
-            // 
-            // Model
-            // 
-            this.Model.HeaderText = "Model";
-            this.Model.Name = "Model";
-            // 
-            // Rocznik
-            // 
-            this.Rocznik.HeaderText = "Rocznik";
-            this.Rocznik.Name = "Rocznik";
-            // 
-            // Kolor
-            // 
-            this.Kolor.HeaderText = "Kolor";
-            this.Kolor.Name = "Kolor";
             // 
             // pictureBox1
             // 
@@ -160,6 +137,36 @@ namespace Wypozyczalnia_Samochodow
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            // 
+            // Marka
+            // 
+            this.Marka.HeaderText = "Marka";
+            this.Marka.Name = "Marka";
+            // 
+            // Model
+            // 
+            this.Model.HeaderText = "Model";
+            this.Model.Name = "Model";
+            // 
+            // Kolor
+            // 
+            this.Kolor.HeaderText = "Kolor";
+            this.Kolor.Name = "Kolor";
+            // 
+            // Rocznik
+            // 
+            this.Rocznik.HeaderText = "Rocznik";
+            this.Rocznik.Name = "Rocznik";
+            // 
+            // CenaZaGodzine
+            // 
+            this.CenaZaGodzine.HeaderText = "Cena za godzinę";
+            this.CenaZaGodzine.Name = "CenaZaGodzine";
+            // 
             // WyswietlSamochody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,7 +205,8 @@ namespace Wypozyczalnia_Samochodow
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marka;
         private System.Windows.Forms.DataGridViewTextBoxColumn Model;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rocznik;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kolor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rocznik;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CenaZaGodzine;
     }
 }
