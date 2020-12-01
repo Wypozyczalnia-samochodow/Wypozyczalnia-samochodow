@@ -46,11 +46,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BazaDanychPolaczenie.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="DodajSamochody.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="DodajSamochody.Designer.cs">
+      <DependentUpon>DodajSamochody.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuGlowne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuGlowne.Designer.cs">
+      <DependentUpon>MenuGlowne.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,19 +65,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="UsunSamochody.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsunSamochody.Designer.cs">
+      <DependentUpon>UsunSamochody.cs</DependentUpon>
+    </Compile>
     <Compile Include="WyswietlSamochody.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WyswietlSamochody.Designer.cs">
       <DependentUpon>WyswietlSamochody.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="DodajSamochody.resx">
+      <DependentUpon>DodajSamochody.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuGlowne.resx">
+      <DependentUpon>MenuGlowne.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsunSamochody.resx">
+      <DependentUpon>UsunSamochody.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WyswietlSamochody.resx">
       <DependentUpon>WyswietlSamochody.cs</DependentUpon>
