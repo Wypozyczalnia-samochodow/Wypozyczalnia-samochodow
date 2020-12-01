@@ -31,7 +31,24 @@ namespace Wypozyczalnia_Samochodow
             Application.Exit(); //Ta instrukcja jest do zamknięcia aplikacji gdy przejdziemy do drugiego formularza
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Select button is clicked
+            List<string>[] list;
+            list = dbConnect.SelectFord();
+
+            WyswietlDG1.Rows.Clear();
+            for (int i = 0; i < list[0].Count; i++)
+            {
+                int number = WyswietlDG1.Rows.Add();
+                WyswietlDG1.Rows[number].Cells[0].Value = list[0][i];
+                WyswietlDG1.Rows[number].Cells[1].Value = list[1][i];
+                WyswietlDG1.Rows[number].Cells[2].Value = list[2][i];
+                WyswietlDG1.Rows[number].Cells[3].Value = list[3][i];
+                WyswietlDG1.Rows[number].Cells[4].Value = list[4][i];
+                WyswietlDG1.Rows[number].Cells[5].Value = list[5][i];
+            }
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -140,3 +157,17 @@ namespace Wypozyczalnia_Samochodow
         }
     }
 }
+© 2020 GitHub, Inc.
+Terms
+Privacy
+
+    Security
+    Status
+    Help
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
