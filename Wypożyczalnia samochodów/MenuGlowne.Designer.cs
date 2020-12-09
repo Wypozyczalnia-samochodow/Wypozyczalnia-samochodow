@@ -33,6 +33,7 @@ namespace Wypozyczalnia_Samochodow
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Usun = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Wyswietl
@@ -79,17 +80,28 @@ namespace Wypozyczalnia_Samochodow
             this.Usun.UseVisualStyleBackColor = true;
             this.Usun.Click += new System.EventHandler(this.Usun_Click);
             // 
-            // Form1
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(678, 283);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 40);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Dodaj samochód do bazy";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // MenuGlowne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(843, 517);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Usun);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Wyswietl);
-            this.Name = "Form1";
+            this.Name = "MenuGlowne";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -102,5 +114,6 @@ namespace Wypozyczalnia_Samochodow
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Usun;
+        private System.Windows.Forms.Button button1;
     }
 }
