@@ -1,4 +1,4 @@
-sing System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,12 +55,6 @@ namespace Wypozyczalnia_Samochodow
                 WyswietlDG1.Rows[number].Cells[5].Value = list[5][i];
             }
         }
-
-        private void UsunSamochody_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit(); //Ta instrukcja jest do zamknięcia aplikacji gdy przejdziemy do drugiego formularza
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
