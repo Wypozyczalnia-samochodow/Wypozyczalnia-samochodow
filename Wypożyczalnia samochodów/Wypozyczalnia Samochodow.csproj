@@ -58,6 +58,12 @@
     <Compile Include="MenuGlowne.Designer.cs">
       <DependentUpon>MenuGlowne.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModyfikacjaKlientow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModyfikacjaKlientow.Designer.cs">
+      <DependentUpon>ModyfikacjaKlientow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -71,6 +77,18 @@
     <Compile Include="UsunSamochody.Designer.cs">
       <DependentUpon>UsunSamochody.cs</DependentUpon>
     </Compile>
+    <Compile Include="DodajKlientow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajKlientow.Designer.cs">
+      <DependentUpon>DodajKlientow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WypozyczanieSamochodow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WypozyczanieSamochodow.Designer.cs">
+      <DependentUpon>WypozyczanieSamochodow.cs</DependentUpon>
+    </Compile>
     <Compile Include="WyswietlSamochody.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +101,9 @@
     <EmbeddedResource Include="MenuGlowne.resx">
       <DependentUpon>MenuGlowne.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModyfikacjaKlientow.resx">
+      <DependentUpon>ModyfikacjaKlientow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -90,6 +111,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UsunSamochody.resx">
       <DependentUpon>UsunSamochody.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajKlientow.resx">
+      <DependentUpon>DodajKlientow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WypozyczanieSamochodow.resx">
+      <DependentUpon>WypozyczanieSamochodow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WyswietlSamochody.resx">
       <DependentUpon>WyswietlSamochody.cs</DependentUpon>
