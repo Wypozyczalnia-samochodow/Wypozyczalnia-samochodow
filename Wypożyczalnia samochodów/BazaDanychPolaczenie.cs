@@ -543,14 +543,17 @@ namespace Wypozyczalnia_Samochodow
         #region Wyswietlanie wypozyczen
         public List<string>[] PokazWypozyczenia()
         {
-            string query = "SELECT NaszeSamochody.Marka, NaszeSamochody.Model, Klienci.Imie, Klienci.Nazwisko, Wypozyczenia.NaIleGodzin FROM NaszeSamochody INNER JOIN (Klienci INNER JOIN Wypozyczenia ON Klienci.IdKlienta = Wypozyczenia.idKlienta) ON NaszeSamochody.idSamochodu = Wypozyczenia.idSamochodu";
+            string query = "SELECT NaszeSamochody.Marka, NaszeSamochody.Model, Klienci.Imie, Klienci.Nazwisko, Wypozyczenia.NaIleGodzin, NaszeSamochody.CzyZwrocono FROM NaszeSamochody INNER JOIN (Klienci INNER JOIN Wypozyczenia ON Klienci.IdKlienta = Wypozyczenia.idKlienta) ON NaszeSamochody.idSamochodu = Wypozyczenia.idSamochodu";
+
+            //string query = "SELECT NaszeSamochody.Marka, NaszeSamochody.Model, Klienci.Imie, Klienci.Nazwisko, Wypozyczenia.NaIleGodzin FROM NaszeSamochody INNER JOIN (Klienci INNER JOIN Wypozyczenia ON Klienci.IdKlienta = Wypozyczenia.idKlienta) ON NaszeSamochody.idSamochodu = Wypozyczenia.idSamochodu";
             //Create a list to store the result
-            List<string>[] list = new List<string>[5];
+            List<string>[] list = new List<string>[6];
             list[0] = new List<string>();
             list[1] = new List<string>();
             list[2] = new List<string>();
             list[3] = new List<string>();
             list[4] = new List<string>();
+            list[5] = new List<string>();
             
 
             //Open connection
@@ -569,6 +572,7 @@ namespace Wypozyczalnia_Samochodow
                     list[2].Add(dataReader["Imie"] + "");
                     list[3].Add(dataReader["Nazwisko"] + "");
                     list[4].Add(dataReader["NaIleGodzin"] + "");
+                    list[5].Add(dataReader["CzyZwrocono"] + "");
                    
                 }
 
