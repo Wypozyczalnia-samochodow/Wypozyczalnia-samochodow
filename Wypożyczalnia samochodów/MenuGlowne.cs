@@ -63,6 +63,13 @@ namespace Wypozyczalnia_Samochodow
             Application.Exit(); //Zamknięcie aplikacji po wyłączeniu formularza
         }
 
+        private void button5_Click(object sender, EventArgs e)//Wyswietlenie formlarza do wypożyczeń samochodów
+        {
+            WypozyczanieSamochodow wyp = new WypozyczanieSamochodow();
+            this.Hide();//
+            wyp.ShowDialog();//Wyswietlanie 2 formularza i ukrywanie bieżącego.
+        }
+
         
     }
 }
