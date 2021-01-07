@@ -70,6 +70,13 @@ namespace Wypozyczalnia_Samochodow
             wyp.ShowDialog();//Wyswietlanie 2 formularza i ukrywanie bieżącego.
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ZarządzanieWypozyczeniami zarz = new ZarządzanieWypozyczeniami();
+            this.Hide();//
+            zarz.ShowDialog();//Wyswietlanie 2 formularza i ukrywanie bieżącego.
+        }
+
         
     }
 }
