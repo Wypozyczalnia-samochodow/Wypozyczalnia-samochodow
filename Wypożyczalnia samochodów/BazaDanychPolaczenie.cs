@@ -540,6 +540,54 @@ namespace Wypozyczalnia_Samochodow
             }
         }
         #endregion
+        #region Wyswietlanie wypozyczen
+        public List<string>[] PokazWypozyczenia()
+        {
+            string query = "SELECT NaszeSamochody.Marka, NaszeSamochody.Model, Klienci.Imie, Klienci.Nazwisko, Wypozyczenia.NaIleGodzin FROM NaszeSamochody INNER JOIN (Klienci INNER JOIN Wypozyczenia ON Klienci.IdKlienta = Wypozyczenia.idKlienta) ON NaszeSamochody.idSamochodu = Wypozyczenia.idSamochodu";
+            //Create a list to store the result
+            List<string>[] list = new List<string>[5];
+            list[0] = new List<string>();
+            list[1] = new List<string>();
+            list[2] = new List<string>();
+            list[3] = new List<string>();
+            list[4] = new List<string>();
+            
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    list[0].Add(dataReader["Marka"] + "");
+                    list[1].Add(dataReader["Model"] + "");
+                    list[2].Add(dataReader["Imie"] + "");
+                    list[3].Add(dataReader["Nazwisko"] + "");
+                    list[4].Add(dataReader["NaIleGodzin"] + "");
+                   
+                }
+
+                //close Data Reader
+                dataReader.Close();
+
+                //close Connection
+                this.CloseConnection();
+
+                //return list to be displayed
+                return list;
+            }
+            else
+            {
+                return list;
+            }
+        }
+        #endregion
+
 
     }
 }
