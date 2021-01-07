@@ -30,6 +30,7 @@ namespace Wypozyczalnia_Samochodow
                 WyswietlWypo.Rows[number].Cells[2].Value = list[2][i];
                 WyswietlWypo.Rows[number].Cells[3].Value = list[3][i];
                 WyswietlWypo.Rows[number].Cells[4].Value = list[4][i];
+                WyswietlWypo.Rows[number].Cells[5].Value = list[5][i];
                 
             
             }
