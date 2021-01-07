@@ -501,6 +501,8 @@ namespace Wypozyczalnia_Samochodow
             }
         }
         #endregion
+
+        #region Aktualizacja danych klienta
         public void AktualizacjaDanych(int IdZmiany, string imie, string nazwisko, string telefon)
         {
             string query = "UPDATE Klienci SET Imie=('"+imie+"') , Nazwisko=('"+nazwisko+"'), NumerTelefonu=('"+telefon+"') WHERE idKlienta=('" + IdZmiany + "')";
@@ -517,5 +519,27 @@ namespace Wypozyczalnia_Samochodow
                 this.CloseConnection();
             }
         }
+        #endregion
+
+        #region Wypożyczenie samochodu dla klienta
+        public void WypozyczanieSamochodow(int idKlienta, int idSamochodu, int NaIleGodzin)
+        {
+            string query = "INSERT INTO Wypozyczenia (idSamochodu,idKlienta,NaIleGodzin) VALUES ('" + idSamochodu + "','" + idKlienta + "','" + NaIleGodzin + "')";
+
+            //open connection
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                //Execute command
+                cmd.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+        #endregion
+
     }
 }
