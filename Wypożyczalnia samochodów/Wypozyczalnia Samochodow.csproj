@@ -95,6 +95,12 @@
     <Compile Include="WyswietlSamochody.Designer.cs">
       <DependentUpon>WyswietlSamochody.cs</DependentUpon>
     </Compile>
+    <Compile Include="ZarządzanieWypozyczeniami.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZarządzanieWypozyczeniami.Designer.cs">
+      <DependentUpon>ZarządzanieWypozyczeniami.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DodajSamochody.resx">
       <DependentUpon>DodajSamochody.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WyswietlSamochody.resx">
       <DependentUpon>WyswietlSamochody.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZarządzanieWypozyczeniami.resx">
+      <DependentUpon>ZarządzanieWypozyczeniami.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
