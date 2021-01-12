@@ -16,6 +16,7 @@ namespace Wypozyczalnia_Samochodow
         private string database;
         private string uid;
         private string password;
+  
 
 
         #region inicjalizacja połączenia z zewnętrzną bazą danych
@@ -329,9 +330,60 @@ namespace Wypozyczalnia_Samochodow
         #endregion
 
         #region Wyswietlanie wszystkich samochodow
+        //Query jest napisane głownie pod formularze gdzie potrzeba zwrócić dane wszystkich aut
         public List<string>[] SelectWszystkie()
         {
             string query = "SELECT * FROM NaszeSamochody";
+
+            //Create a list to store the result
+            List<string>[] list = new List<string>[6];
+            list[0] = new List<string>();
+            list[1] = new List<string>();
+            list[2] = new List<string>();
+            list[3] = new List<string>();
+            list[4] = new List<string>();
+            list[5] = new List<string>();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    list[0].Add(dataReader["idSamochodu"] + "");
+                    list[1].Add(dataReader["Marka"] + "");
+                    list[2].Add(dataReader["Model"] + "");
+                    list[3].Add(dataReader["Kolor"] + "");
+                    list[4].Add(dataReader["Rocznik"] + "");
+                    list[5].Add(dataReader["CenaZaGodzine"] + "");
+                }
+
+                //close Data Reader
+                dataReader.Close();
+
+                //close Connection
+                this.CloseConnection();
+
+                //return list to be displayed
+                return list;
+            }
+            else
+            {
+                return list;
+            }
+        }
+        #endregion
+
+        #region Wyswietlanie dostępnych samochodow
+        //Query jest napisane głownie do formularza WypozyczanieSamochodow gdzie muszę wyświetlić auta które faktycznie są w wypożyczalnii
+        public List<string>[] SelectDostepne()
+        {
+            string query = "SELECT * FROM NaszeSamochody where CzyZwrocono='tak'";
 
             //Create a list to store the result
             List<string>[] list = new List<string>[6];
@@ -525,6 +577,7 @@ namespace Wypozyczalnia_Samochodow
         public void WypozyczanieSamochodow(int idKlienta, int idSamochodu, int NaIleGodzin)
         {
             string query = "INSERT INTO Wypozyczenia (idSamochodu,idKlienta,NaIleGodzin) VALUES ('" + idSamochodu + "','" + idKlienta + "','" + NaIleGodzin + "')";
+            string query2 = "UPDATE NaszeSamochody Set CzyZwrocono = 'nie' where idSamochodu = ('"+idSamochodu+"')";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -540,21 +593,20 @@ namespace Wypozyczalnia_Samochodow
             }
         }
         #endregion
+
         #region Wyswietlanie wypozyczen
         public List<string>[] PokazWypozyczenia()
         {
-            string query = "SELECT NaszeSamochody.Marka, NaszeSamochody.Model, Klienci.Imie, Klienci.Nazwisko, Wypozyczenia.NaIleGodzin, NaszeSamochody.CzyZwrocono FROM NaszeSamochody INNER JOIN (Klienci INNER JOIN Wypozyczenia ON Klienci.IdKlienta = Wypozyczenia.idKlienta) ON NaszeSamochody.idSamochodu = Wypozyczenia.idSamochodu";
-
-            //string query = "SELECT NaszeSamochody.Marka, NaszeSamochody.Model, Klienci.Imie, Klienci.Nazwisko, Wypozyczenia.NaIleGodzin FROM NaszeSamochody INNER JOIN (Klienci INNER JOIN Wypozyczenia ON Klienci.IdKlienta = Wypozyczenia.idKlienta) ON NaszeSamochody.idSamochodu = Wypozyczenia.idSamochodu";
+            string query = "SELECT Wypozyczenia.idWypozyczenia, NaszeSamochody.Marka, NaszeSamochody.Model, Klienci.Imie, Klienci.Nazwisko, Wypozyczenia.NaIleGodzin, NaszeSamochody.CzyZwrocono FROM NaszeSamochody INNER JOIN (Klienci INNER JOIN Wypozyczenia ON Klienci.IdKlienta = Wypozyczenia.idKlienta) ON NaszeSamochody.idSamochodu = Wypozyczenia.idSamochodu";
             //Create a list to store the result
-            List<string>[] list = new List<string>[6];
+            List<string>[] list = new List<string>[7];
             list[0] = new List<string>();
             list[1] = new List<string>();
             list[2] = new List<string>();
             list[3] = new List<string>();
             list[4] = new List<string>();
             list[5] = new List<string>();
-            
+            list[6] = new List<string>();
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -567,12 +619,13 @@ namespace Wypozyczalnia_Samochodow
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
-                    list[0].Add(dataReader["Marka"] + "");
-                    list[1].Add(dataReader["Model"] + "");
-                    list[2].Add(dataReader["Imie"] + "");
-                    list[3].Add(dataReader["Nazwisko"] + "");
-                    list[4].Add(dataReader["NaIleGodzin"] + "");
-                    list[5].Add(dataReader["CzyZwrocono"] + "");
+                    list[0].Add(dataReader["idWypozyczenia"] + "");
+                    list[1].Add(dataReader["Marka"] + "");
+                    list[2].Add(dataReader["Model"] + "");
+                    list[3].Add(dataReader["Imie"] + "");
+                    list[4].Add(dataReader["Nazwisko"] + "");
+                    list[5].Add(dataReader["NaIleGodzin"] + "");
+                    list[6].Add(dataReader["CzyZwrocono"] + "");
                    
                 }
 
@@ -592,6 +645,24 @@ namespace Wypozyczalnia_Samochodow
         }
         #endregion
 
+        #region Zmiana statusu dostępności wypożyczonego samochodu
+        public void ZmianaStatusu(int IdZmiany, string Status)
+        {
+            string query2 = "UPDATE NaszeSamochody SET CzyZwrocono=('" + Status + "') WHERE NaszeSamochody.idSamochodu=( SELECT Wypozyczenia.idSamochodu FROM Wypozyczenia WHERE Wypozyczenia.idWypozyczenia=('"+IdZmiany+"'))";
+            //open connection
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd2 = new MySqlCommand(query2, connection);
+
+                //Execute command
+                cmd2.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+        #endregion
 
     }
 }
