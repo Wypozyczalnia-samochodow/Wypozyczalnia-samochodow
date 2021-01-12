@@ -584,9 +584,11 @@ namespace Wypozyczalnia_Samochodow
             {
                 //create command and assign the query and connection from the constructor
                 MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd2 = new MySqlCommand(query2, connection);
 
                 //Execute command
                 cmd.ExecuteNonQuery();
+                cmd2.ExecuteNonQuery();
 
                 //close connection
                 this.CloseConnection();
