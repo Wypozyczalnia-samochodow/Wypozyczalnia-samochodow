@@ -190,6 +190,7 @@ namespace Wypozyczalnia_Samochodow
             this.ZarzadzajWypozyczeniami.TabIndex = 58;
             this.ZarzadzajWypozyczeniami.Text = "Zarządzaj wypożyczeniami";
             this.ZarzadzajWypozyczeniami.UseVisualStyleBackColor = true;
+            this.ZarzadzajWypozyczeniami.Click += new System.EventHandler(this.ZarzadzajWypozyczeniami_Click);
             // 
             // WyswietlDostepne
             // 
