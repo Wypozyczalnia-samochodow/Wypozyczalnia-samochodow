@@ -20,7 +20,7 @@ namespace Wypozyczalnia_Samochodow
             dbConnect = new BazaDanychPolaczenie();
             //Wyswietlenie listy samochodow
             List<string>[] list;
-            list = dbConnect.SelectWszystkie();
+            list = dbConnect.SelectDostepne();
 
             WyswietlDostepne.Rows.Clear();
             for (int i = 0; i < list[0].Count; i++)
@@ -66,3 +66,4 @@ namespace Wypozyczalnia_Samochodow
         }
     }
 }
+
