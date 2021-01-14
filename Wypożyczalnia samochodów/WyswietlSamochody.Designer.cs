@@ -30,17 +30,18 @@ namespace Wypozyczalnia_Samochodow
         {
             this.label1 = new System.Windows.Forms.Label();
             this.WyswietlDG1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marka = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kolor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rocznik = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CenaZaGodzine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.MenuGlowne = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.WyswietlDG1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -62,6 +63,8 @@ namespace Wypozyczalnia_Samochodow
             // 
             // WyswietlDG1
             // 
+            this.WyswietlDG1.AllowUserToAddRows = false;
+            this.WyswietlDG1.AllowUserToDeleteRows = false;
             this.WyswietlDG1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.WyswietlDG1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.WyswietlDG1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -73,9 +76,40 @@ namespace Wypozyczalnia_Samochodow
             this.CenaZaGodzine});
             this.WyswietlDG1.Location = new System.Drawing.Point(117, 311);
             this.WyswietlDG1.Name = "WyswietlDG1";
+            this.WyswietlDG1.ReadOnly = true;
             this.WyswietlDG1.Size = new System.Drawing.Size(644, 155);
             this.WyswietlDG1.TabIndex = 1;
             this.WyswietlDG1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WyswietlDG1_CellContentClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            // 
+            // Marka
+            // 
+            this.Marka.HeaderText = "Marka";
+            this.Marka.Name = "Marka";
+            // 
+            // Model
+            // 
+            this.Model.HeaderText = "Model";
+            this.Model.Name = "Model";
+            // 
+            // Kolor
+            // 
+            this.Kolor.HeaderText = "Kolor";
+            this.Kolor.Name = "Kolor";
+            // 
+            // Rocznik
+            // 
+            this.Rocznik.HeaderText = "Rocznik";
+            this.Rocznik.Name = "Rocznik";
+            // 
+            // CenaZaGodzine
+            // 
+            this.CenaZaGodzine.HeaderText = "Cena za godzinę";
+            this.CenaZaGodzine.Name = "CenaZaGodzine";
             // 
             // pictureBox1
             // 
@@ -137,41 +171,23 @@ namespace Wypozyczalnia_Samochodow
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
-            // id
+            // MenuGlowne
             // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            // 
-            // Marka
-            // 
-            this.Marka.HeaderText = "Marka";
-            this.Marka.Name = "Marka";
-            // 
-            // Model
-            // 
-            this.Model.HeaderText = "Model";
-            this.Model.Name = "Model";
-            // 
-            // Kolor
-            // 
-            this.Kolor.HeaderText = "Kolor";
-            this.Kolor.Name = "Kolor";
-            // 
-            // Rocznik
-            // 
-            this.Rocznik.HeaderText = "Rocznik";
-            this.Rocznik.Name = "Rocznik";
-            // 
-            // CenaZaGodzine
-            // 
-            this.CenaZaGodzine.HeaderText = "Cena za godzinę";
-            this.CenaZaGodzine.Name = "CenaZaGodzine";
+            this.MenuGlowne.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.MenuGlowne.Location = new System.Drawing.Point(368, 491);
+            this.MenuGlowne.Name = "MenuGlowne";
+            this.MenuGlowne.Size = new System.Drawing.Size(125, 53);
+            this.MenuGlowne.TabIndex = 66;
+            this.MenuGlowne.Text = "Powrót do Menu Głównego";
+            this.MenuGlowne.UseVisualStyleBackColor = true;
+            this.MenuGlowne.Click += new System.EventHandler(this.MenuGlowne_Click);
             // 
             // WyswietlSamochody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 523);
+            this.ClientSize = new System.Drawing.Size(894, 577);
+            this.Controls.Add(this.MenuGlowne);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -179,6 +195,7 @@ namespace Wypozyczalnia_Samochodow
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.WyswietlDG1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "WyswietlSamochody";
             this.Text = "Pokaż samochody";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WyswietlSamochody_FormClosed);
@@ -208,5 +225,6 @@ namespace Wypozyczalnia_Samochodow
         private System.Windows.Forms.DataGridViewTextBoxColumn Kolor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rocznik;
         private System.Windows.Forms.DataGridViewTextBoxColumn CenaZaGodzine;
+        private System.Windows.Forms.Button MenuGlowne;
     }
 }
