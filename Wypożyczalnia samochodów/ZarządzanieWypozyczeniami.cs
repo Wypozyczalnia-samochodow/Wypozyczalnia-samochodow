@@ -34,8 +34,6 @@ namespace Wypozyczalnia_Samochodow
                 WyswietlWypo.Rows[number].Cells[4].Value = list[4][i];
                 WyswietlWypo.Rows[number].Cells[5].Value = list[5][i];
                 WyswietlWypo.Rows[number].Cells[6].Value = list[6][i];
-                
-            
             }
 
         }
@@ -45,8 +43,7 @@ namespace Wypozyczalnia_Samochodow
             IdZmiany = int.Parse(txtIdZmiany.Text);
             Status = txtZakonczono.Text;
             dbConnect.ZmianaStatusu(IdZmiany, Status);
-            
-
+            //Poniżej wyświetlam listę wypożyczeń
             List<string>[] list;
             list = dbConnect.PokazWypozyczenia();
 
@@ -61,8 +58,6 @@ namespace Wypozyczalnia_Samochodow
                 WyswietlWypo.Rows[number].Cells[4].Value = list[4][i];
                 WyswietlWypo.Rows[number].Cells[5].Value = list[5][i];
                 WyswietlWypo.Rows[number].Cells[6].Value = list[6][i];
-
-
             }
         }
 
@@ -71,6 +66,11 @@ namespace Wypozyczalnia_Samochodow
             MenuGlowne m1 = new MenuGlowne();
             this.Hide();//
             m1.ShowDialog();//Wyswietlanie 2 formularza i ukrywanie bieżącego.
+        }
+
+        private void ZarządzanieWypozyczeniami_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
