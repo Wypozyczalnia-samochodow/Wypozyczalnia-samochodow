@@ -270,6 +270,7 @@ namespace Wypozyczalnia_Samochodow
             this.Controls.Add(this.txtIdZmiany);
             this.Controls.Add(this.txtImieZmiany);
             this.Controls.Add(this.WyswietlKlientowDataG);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ModyfikacjaKlientow";
             this.Text = "ModyfikacjaKlientow";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ModyfikacjaKlientow_FormClosed);
