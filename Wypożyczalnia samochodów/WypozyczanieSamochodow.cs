@@ -71,5 +71,10 @@ namespace Wypozyczalnia_Samochodow
             this.Hide();//
             z1.ShowDialog();//Wyswietlanie 2 formularza i ukrywanie bieżącego.
         }
+
+        private void WypozyczanieSamochodow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
