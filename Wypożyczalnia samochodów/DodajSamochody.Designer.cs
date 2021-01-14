@@ -46,6 +46,7 @@ namespace Wypozyczalnia_Samochodow
             this.txtKolor = new System.Windows.Forms.TextBox();
             this.txtRocznik = new System.Windows.Forms.TextBox();
             this.txtCena = new System.Windows.Forms.TextBox();
+            this.MenuGlowne = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.WyswietlDG1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@ namespace Wypozyczalnia_Samochodow
             this.Kolor,
             this.Rocznik,
             this.CenaZaGodzine});
-            this.WyswietlDG1.Location = new System.Drawing.Point(283, 245);
+            this.WyswietlDG1.Location = new System.Drawing.Point(15, 249);
             this.WyswietlDG1.Name = "WyswietlDG1";
             this.WyswietlDG1.Size = new System.Drawing.Size(645, 324);
             this.WyswietlDG1.TabIndex = 3;
@@ -115,10 +116,10 @@ namespace Wypozyczalnia_Samochodow
             // 
             // DodajSamochod
             // 
-            this.DodajSamochod.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DodajSamochod.Location = new System.Drawing.Point(60, 346);
+            this.DodajSamochod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.DodajSamochod.Location = new System.Drawing.Point(733, 251);
             this.DodajSamochod.Name = "DodajSamochod";
-            this.DodajSamochod.Size = new System.Drawing.Size(175, 102);
+            this.DodajSamochod.Size = new System.Drawing.Size(195, 38);
             this.DodajSamochod.TabIndex = 8;
             this.DodajSamochod.Text = "Dodaj samochód";
             this.DodajSamochod.UseVisualStyleBackColor = true;
@@ -192,11 +193,23 @@ namespace Wypozyczalnia_Samochodow
             this.txtCena.Size = new System.Drawing.Size(370, 20);
             this.txtCena.TabIndex = 16;
             // 
+            // MenuGlowne
+            // 
+            this.MenuGlowne.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.MenuGlowne.Location = new System.Drawing.Point(733, 326);
+            this.MenuGlowne.Name = "MenuGlowne";
+            this.MenuGlowne.Size = new System.Drawing.Size(195, 70);
+            this.MenuGlowne.TabIndex = 57;
+            this.MenuGlowne.Text = "Powrót do Menu Głównego";
+            this.MenuGlowne.UseVisualStyleBackColor = true;
+            this.MenuGlowne.Click += new System.EventHandler(this.MenuGlowne_Click);
+            // 
             // DodajSamochody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 604);
+            this.ClientSize = new System.Drawing.Size(996, 640);
+            this.Controls.Add(this.MenuGlowne);
             this.Controls.Add(this.txtCena);
             this.Controls.Add(this.txtRocznik);
             this.Controls.Add(this.txtKolor);
@@ -209,8 +222,10 @@ namespace Wypozyczalnia_Samochodow
             this.Controls.Add(this.dodanieSamochodu);
             this.Controls.Add(this.txtMarka);
             this.Controls.Add(this.WyswietlDG1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DodajSamochody";
             this.Text = "DodajSamochody";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DodajSamochody_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.WyswietlDG1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -237,5 +252,6 @@ namespace Wypozyczalnia_Samochodow
         private System.Windows.Forms.TextBox txtKolor;
         private System.Windows.Forms.TextBox txtRocznik;
         private System.Windows.Forms.TextBox txtCena;
+        private System.Windows.Forms.Button MenuGlowne;
     }
 }
