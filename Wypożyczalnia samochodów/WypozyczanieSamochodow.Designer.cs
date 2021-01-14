@@ -265,8 +265,10 @@ namespace Wypozyczalnia_Samochodow
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIdAuta);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "WypozyczanieSamochodow";
             this.Text = "WypozyczanieSamochodow";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WypozyczanieSamochodow_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.WyswietlKlientow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WyswietlDostepne)).EndInit();
             this.ResumeLayout(false);
