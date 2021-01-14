@@ -34,7 +34,6 @@ namespace Wypozyczalnia_Samochodow
             this.label2 = new System.Windows.Forms.Label();
             this.Usun = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -77,7 +76,7 @@ namespace Wypozyczalnia_Samochodow
             // 
             // Usun
             // 
-            this.Usun.Location = new System.Drawing.Point(678, 217);
+            this.Usun.Location = new System.Drawing.Point(492, 285);
             this.Usun.Name = "Usun";
             this.Usun.Size = new System.Drawing.Size(135, 40);
             this.Usun.TabIndex = 3;
@@ -87,22 +86,13 @@ namespace Wypozyczalnia_Samochodow
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(678, 283);
+            this.button1.Location = new System.Drawing.Point(492, 217);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 40);
             this.button1.TabIndex = 4;
             this.button1.Text = "Dodaj samochód do bazy";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(678, 347);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 40);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Modyfikuj dane samochodu";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -116,7 +106,7 @@ namespace Wypozyczalnia_Samochodow
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(492, 283);
+            this.button4.Location = new System.Drawing.Point(678, 217);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(135, 40);
             this.button4.TabIndex = 7;
@@ -126,7 +116,7 @@ namespace Wypozyczalnia_Samochodow
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(492, 347);
+            this.button5.Location = new System.Drawing.Point(678, 354);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(135, 40);
             this.button5.TabIndex = 8;
@@ -136,7 +126,7 @@ namespace Wypozyczalnia_Samochodow
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(492, 217);
+            this.button6.Location = new System.Drawing.Point(678, 285);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(135, 40);
             this.button6.TabIndex = 9;
@@ -154,7 +144,6 @@ namespace Wypozyczalnia_Samochodow
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Usun);
             this.Controls.Add(this.label2);
@@ -176,7 +165,6 @@ namespace Wypozyczalnia_Samochodow
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Usun;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
