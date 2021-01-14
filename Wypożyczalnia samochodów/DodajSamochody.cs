@@ -67,5 +67,17 @@ namespace Wypozyczalnia_Samochodow
             }
             
         }
+
+        private void DodajSamochody_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();//Zamkniecie aplikacji po zamknieciu formularza
+        }
+
+        private void MenuGlowne_Click(object sender, EventArgs e)
+        {
+            MenuGlowne m1 = new MenuGlowne();
+            this.Hide();//
+            m1.ShowDialog();//Wyswietlanie 2 formularza i ukrywanie bieżącego.
+        }
     }
 }
