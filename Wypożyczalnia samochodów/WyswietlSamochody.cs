@@ -16,11 +16,13 @@ namespace Wypozyczalnia_Samochodow
 
         public WyswietlSamochody()
         {
+           
+
             InitializeComponent();
             dbConnect = new BazaDanychPolaczenie();
             //Select button is clicked
             List<string>[] list;
-            list = dbConnect.SelectWszystkie(); //Select Ford
+            list = dbConnect.SelectWszystkie(); //Wyświetlanie wszystkich samochodów
 
             WyswietlDG1.Rows.Clear();
             for (int i = 0; i < list[0].Count; i++)
@@ -34,7 +36,6 @@ namespace Wypozyczalnia_Samochodow
                 WyswietlDG1.Rows[number].Cells[5].Value = list[5][i];
             }
         }
-        
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -55,6 +56,7 @@ namespace Wypozyczalnia_Samochodow
 
         private void pictureBox5_Click(object sender, EventArgs e) //Przycisk Ford
         {
+            
             //Select button is clicked
             List<string>[] list;
             list = dbConnect.SelectFord(); //Select Ford
