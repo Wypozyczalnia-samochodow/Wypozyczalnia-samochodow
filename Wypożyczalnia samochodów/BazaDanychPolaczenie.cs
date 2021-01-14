@@ -43,7 +43,7 @@ namespace Wypozyczalnia_Samochodow
             try
             {
                 connection.Open();
-                MessageBox.Show("Pobrano dane! \nZostales polaczony z serwerem");
+                //MessageBox.Show("Pobrano dane! \nZostales polaczony z serwerem");
                 return true;
             }
             catch (MySqlException ex)
@@ -334,7 +334,8 @@ namespace Wypozyczalnia_Samochodow
         public List<string>[] SelectWszystkie()
         {
             string query = "SELECT * FROM NaszeSamochody";
-
+            
+            
             //Create a list to store the result
             List<string>[] list = new List<string>[6];
             list[0] = new List<string>();
@@ -348,7 +349,7 @@ namespace Wypozyczalnia_Samochodow
             if (this.OpenConnection() == true)
             {
                 //Create Command
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(query,connection);
                 //Create a data reader and Execute the command
                 MySqlDataReader dataReader = cmd.ExecuteReader();
 
@@ -362,13 +363,13 @@ namespace Wypozyczalnia_Samochodow
                     list[4].Add(dataReader["Rocznik"] + "");
                     list[5].Add(dataReader["CenaZaGodzine"] + "");
                 }
-
+                
                 //close Data Reader
                 dataReader.Close();
 
                 //close Connection
                 this.CloseConnection();
-
+                
                 //return list to be displayed
                 return list;
             }
@@ -376,6 +377,7 @@ namespace Wypozyczalnia_Samochodow
             {
                 return list;
             }
+
         }
         #endregion
 
