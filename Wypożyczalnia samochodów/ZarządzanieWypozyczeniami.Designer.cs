@@ -64,7 +64,7 @@ namespace Wypozyczalnia_Samochodow
             this.WyswietlWypo.Location = new System.Drawing.Point(27, 62);
             this.WyswietlWypo.Name = "WyswietlWypo";
             this.WyswietlWypo.ReadOnly = true;
-            this.WyswietlWypo.Size = new System.Drawing.Size(743, 155);
+            this.WyswietlWypo.Size = new System.Drawing.Size(743, 234);
             this.WyswietlWypo.TabIndex = 60;
             // 
             // idWypozyczenia
@@ -113,7 +113,7 @@ namespace Wypozyczalnia_Samochodow
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(226, 237);
+            this.label3.Location = new System.Drawing.Point(232, 331);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(449, 19);
             this.label3.TabIndex = 61;
@@ -123,7 +123,7 @@ namespace Wypozyczalnia_Samochodow
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(329, 274);
+            this.label1.Location = new System.Drawing.Point(335, 368);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(346, 19);
             this.label1.TabIndex = 62;
@@ -131,21 +131,21 @@ namespace Wypozyczalnia_Samochodow
             // 
             // txtIdZmiany
             // 
-            this.txtIdZmiany.Location = new System.Drawing.Point(681, 236);
+            this.txtIdZmiany.Location = new System.Drawing.Point(687, 330);
             this.txtIdZmiany.Name = "txtIdZmiany";
             this.txtIdZmiany.Size = new System.Drawing.Size(84, 20);
             this.txtIdZmiany.TabIndex = 63;
             // 
             // txtZakonczono
             // 
-            this.txtZakonczono.Location = new System.Drawing.Point(681, 273);
+            this.txtZakonczono.Location = new System.Drawing.Point(687, 367);
             this.txtZakonczono.Name = "txtZakonczono";
             this.txtZakonczono.Size = new System.Drawing.Size(84, 20);
             this.txtZakonczono.TabIndex = 64;
             // 
             // MenuGlowne
             // 
-            this.MenuGlowne.Location = new System.Drawing.Point(478, 325);
+            this.MenuGlowne.Location = new System.Drawing.Point(484, 419);
             this.MenuGlowne.Name = "MenuGlowne";
             this.MenuGlowne.Size = new System.Drawing.Size(122, 53);
             this.MenuGlowne.TabIndex = 65;
@@ -163,7 +163,7 @@ namespace Wypozyczalnia_Samochodow
             // 
             // AktualizacjaDanych
             // 
-            this.AktualizacjaDanych.Location = new System.Drawing.Point(630, 325);
+            this.AktualizacjaDanych.Location = new System.Drawing.Point(636, 419);
             this.AktualizacjaDanych.Name = "AktualizacjaDanych";
             this.AktualizacjaDanych.Size = new System.Drawing.Size(135, 53);
             this.AktualizacjaDanych.TabIndex = 67;
@@ -186,7 +186,7 @@ namespace Wypozyczalnia_Samochodow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 431);
+            this.ClientSize = new System.Drawing.Size(832, 546);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.AktualizacjaDanych);
             this.Controls.Add(this.wyswietlquerry);
@@ -196,8 +196,10 @@ namespace Wypozyczalnia_Samochodow
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.WyswietlWypo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ZarządzanieWypozyczeniami";
             this.Text = "ZarządzanieWypozyczeniami";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ZarządzanieWypozyczeniami_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.WyswietlWypo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
