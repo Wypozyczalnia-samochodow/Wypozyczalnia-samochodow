@@ -150,7 +150,7 @@ namespace Wypozyczalnia_Samochodow
                 WyswietlDG1.Rows[number].Cells[5].Value = list[5][i];
             }
         }
-
+//
         private void WyswietlDG1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
