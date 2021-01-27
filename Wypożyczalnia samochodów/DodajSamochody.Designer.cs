@@ -255,3 +255,4 @@ namespace Wypozyczalnia_Samochodow
         private System.Windows.Forms.Button MenuGlowne;
     }
 }
+//
