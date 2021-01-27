@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+//
 namespace Wypozyczalnia_Samochodow
 {
     public partial class WypozyczanieSamochodow : Form
