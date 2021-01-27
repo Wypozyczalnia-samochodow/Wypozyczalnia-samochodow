@@ -47,7 +47,7 @@ namespace Wypozyczalnia_Samochodow
             Application.Exit(); //Ta instrukcja jest do zamknięcia aplikacji gdy przejdziemy do drugiego formularza
         }
 
-        
+        //
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
