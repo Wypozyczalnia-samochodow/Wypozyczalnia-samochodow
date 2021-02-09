@@ -151,16 +151,35 @@ namespace Wypozyczalnia_Samochodow
             }
         }
 //
-        private void WyswietlDG1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        }        public WyswietlSamochody()
         {
 
+
+            InitializeComponent();
+            dbConnect = new BazaDanychPolaczenie();
+            //Select button is clicked
+            List<string>[] list;
+            list = dbConnect.SelectWszystkie(); //Select Ford
+            list = dbConnect.SelectWszystkie(); //Wyświetlanie wszystkich samochodów
+
+            WyswietlDG1.Rows.Clear();
+            for (int i = 0; i < list[0].Count; i++)
+@@ -34,7 +36,6 @@ public WyswietlSamochody()
+                WyswietlDG1.Rows[number].Cells[5].Value = list[5][i];
+            }
         }
 
-        private void MenuGlowne_Click(object sender, EventArgs e)
+
+        private void label1_Click(object sender, EventArgs e)
         {
-            MenuGlowne m1 = new MenuGlowne();
-            this.Hide();//
-            m1.ShowDialog();//Wyswietlanie 2 formularza i ukrywanie bieżącego.
-        }
+@@ -55,6 +56,7 @@ private void pictureBox1_Click(object sender, EventArgs e)
+
+        private void pictureBox5_Click(object sender, EventArgs e) //Przycisk Ford
+        {
+
+            //Select button is clicked
+            List<string>[] list;
+            list = dbConnect.SelectFord(); //Select Ford
     }
 }
