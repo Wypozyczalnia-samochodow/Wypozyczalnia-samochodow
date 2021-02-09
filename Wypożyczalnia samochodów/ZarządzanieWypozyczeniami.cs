@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
---
+
 namespace Wypozyczalnia_Samochodow
 {
     public partial class ZarządzanieWypozyczeniami : Form
@@ -40,9 +40,16 @@ namespace Wypozyczalnia_Samochodow
 
         private void AktualizacjaDanych_Click(object sender, EventArgs e)
         {
-            IdZmiany = int.Parse(txtIdZmiany.Text);
             Status = txtZakonczono.Text;
-            dbConnect.ZmianaStatusu(IdZmiany, Status);
+            bool successfullyParsed = int.TryParse(txtIdZmiany.Text, out IdZmiany);
+            if (successfullyParsed)
+            {
+                dbConnect.ZmianaStatusu(IdZmiany, Status);
+            }
+            else
+            {
+                MessageBox.Show("Wartośc id musi być liczbą!");
+            }
             //Poniżej wyświetlam listę wypożyczeń
             List<string>[] list;
             list = dbConnect.PokazWypozyczenia();
