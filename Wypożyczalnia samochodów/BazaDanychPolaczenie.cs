@@ -27,10 +27,10 @@ namespace Wypozyczalnia_Samochodow
         }
         private void Initialize()
         {
-            server = "bartuszak.pl";
+            server = "127.0.0.1";//adres localhost 
             database = "a_cichurski";
-            uid = "a_cichurski";
-            password = "BAjE3byDQnjQuZ3L";
+            uid = "root";
+            password = "";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
             connection = new MySqlConnection(connectionString);
@@ -43,28 +43,14 @@ namespace Wypozyczalnia_Samochodow
             try
             {
                 connection.Open();
-                //MessageBox.Show("Pobrano dane! \nZostales polaczony z serwerem");
+                MessageBox.Show("Zostales polaczony z serwerem.");
                 return true;
             }
-            catch (MySqlException ex)
-            {
-                //When handling errors, you can your application's response based on the error number.
-                //The two most common error numbers when connecting are as follows:
-                //0: Cannot connect to server.
-                //1045: Invalid user name and/or password.
-
-                switch (ex.Number)
+            catch (MySqlException)//Zastosowanie wyjątku w razie braku połączenia z bazą danych
                 {
-                    case 0:
-                        MessageBox.Show("Cannot connect to server.  Contact administrator");
-                        break;
-
-                    case 1045:
-                        MessageBox.Show("Invalid username/password, please try again");
-                        break;
+                    MessageBox.Show("Problem z połączeniem do BazyDanych.\nSprawdź połączenie internetowe \nSkontaktuj się z administratorem!");
                 }
-                return false;
-            }
+            return false;
         }
         #endregion
 
@@ -382,7 +368,7 @@ namespace Wypozyczalnia_Samochodow
         #endregion
 
         #region Wyswietlanie dostępnych samochodow
-        //Query jest napisane głownie do formularza WypozyczanieSamochodow gdzie muszę wyświetlić auta które faktycznie są w wypożyczalnii
+        //Query jest napisane głownie do formularza WypozyczanieSamochodow gdzie muszę wyświetlić auta które faktycznie są w wypożyczalni
         public List<string>[] SelectDostepne()
         {
             string query = "SELECT * FROM NaszeSamochody where CzyZwrocono='tak'";
@@ -497,7 +483,6 @@ namespace Wypozyczalnia_Samochodow
                     list[1].Add(dataReader["Imie"] + "");
                     list[2].Add(dataReader["Nazwisko"] + "");
                     list[3].Add(dataReader["NumerTelefonu"] + "");
-
                 }
 
                 //close Data Reader
@@ -670,4 +655,3 @@ namespace Wypozyczalnia_Samochodow
 
     }
 }
-//
